@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hitung Tarif Perjalanan Stasiun</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Hitung tarif perjalanan</h1>
+      <p id="aturan" class="aturan">Memuat aturan tarif…</p>
+    </header>
+
+    <section class="panel" aria-label="Pilih rute">
+      <div class="pilih">
+        <div class="kolom">
+          <label for="asal">Stasiun asal</label>
+          <select id="asal"></select>
+        </div>
+
+        <button id="tukar" class="tukar" type="button" aria-label="Tukar stasiun asal dan tujuan">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 4v16M7 20l-3-3M7 20l3-3M17 20V4M17 4l-3 3M17 4l3 3"/>
+          </svg>
+        </button>
+
+        <div class="kolom">
+          <label for="tujuan">Stasiun tujuan</label>
+          <select id="tujuan"></select>
+        </div>
+      </div>
+      <p id="pesan" class="pesan" role="alert" hidden></p>
+    </section>
+
+    <p id="kosong" class="kosong">Pilih stasiun asal dan tujuan, tarif akan muncul otomatis.</p>
+
+    <section id="hasil" class="hasil" aria-live="polite" hidden>
+      <div class="tiket">
+        <div class="bagian">
+          <span class="angka" id="jumlah">0</span>
+          <span class="satuan">stasiun ditempuh</span>
+        </div>
+        <div class="bagian tarif">
+          <span class="angka" id="tarif">Rp0</span>
+          <span class="satuan">total tarif</span>
+        </div>
+      </div>
+
+      <p id="rincian" class="rincian"></p>
+
+      <ol id="rute" class="rute"></ol>
+
+      <div class="legenda">
+        <span><i class="garis dasar"></i><span id="legenda-dasar"></span></span>
+        <span id="legenda-tambahan-wrap"><i class="garis tambah"></i><span id="legenda-tambahan"></span></span>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
